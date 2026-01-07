@@ -40,6 +40,9 @@ function App() {
                 src="/SIGEM1.1/LOGOSIGEM.svg" 
                 alt="SIGEM" 
                 className="h-full w-auto max-w-full object-contain drop-shadow-2xl"
+                style={{ backgroundColor: 'transparent',
+                  mixBlendMode: 'multiply'
+                  }}
               />
             </div>
             <p className="text-xs sm:text-sm text-white/70 dark:text-white/60 tracking-wide text-center max-w-md px-4 font-light">
