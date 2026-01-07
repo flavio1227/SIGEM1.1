@@ -12,7 +12,7 @@ function App() {
         <div
           className="fixed inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: 'url(https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=2000&auto=format&fit=crop)',
+            backgroundImage: 'url(/SIGEM1.1/MapaRelieve.svg)',
           }}
         />
         <div className="fixed inset-0 bg-slate-800/25 dark:bg-black/35 backdrop-blur-[1px]" />
