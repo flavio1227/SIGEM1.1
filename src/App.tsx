@@ -35,9 +35,16 @@ function App() {
         </a>
         <div className="flex flex-col items-center justify-center flex-1 px-4 py-8 sm:px-8 sm:py-12 md:px-12 md:py-16 relative z-10">
           <div className="mb-8 sm:mb-12 md:mb-16 flex flex-col items-center gap-3 sm:gap-4 md:gap-6">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white tracking-wider uppercase text-center px-4 drop-shadow-2xl">
-              SIGEM
-            </h1>
+          <div className="mb-8 sm:mb-12 md:mb-16 flex flex-col items-center gap-3 sm:gap-4 md:gap-6">
+            <img 
+              src="/SIGEM1.1/LOGOSIGEM.svg" 
+              alt="SIGEM" 
+              className="h-16 sm:h-20 md:h-24 w-auto drop-shadow-2xl"
+            />
+            <p className="text-xs sm:text-sm text-white/70 dark:text-white/60 tracking-wide text-center max-w-md px-4 font-light">
+              Lorem ipsum dolor sit amet, consectetur adipiscing
+            </p>
+          </div>
             <p className="text-xs sm:text-sm text-white/70 dark:text-white/60 tracking-wide text-center max-w-md px-4 font-light">
               Lorem ipsum dolor sit amet, consectetur adipiscing
             </p>
