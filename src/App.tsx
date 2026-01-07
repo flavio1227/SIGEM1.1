@@ -34,21 +34,17 @@ function App() {
           <span className="hidden sm:inline">Request Integration</span>
         </a>
         <div className="flex flex-col items-center justify-center flex-1 px-4 py-8 sm:px-8 sm:py-12 md:px-12 md:py-16 relative z-10">
-          <div className="mb-8 sm:mb-12 md:mb-16 flex flex-col items-center gap-3 sm:gap-4 md:gap-6">
-          <div className="mb-8 sm:mb-12 md:mb-16 flex flex-col items-center gap-3 sm:gap-4 md:gap-6">
+           <div className="mb-8 sm:mb-12 md:mb-16 flex flex-col items-center gap-3 sm:gap-4 md:gap-6">
             <img 
               src="/SIGEM1.1/LOGOSIGEM.svg" 
               alt="SIGEM" 
-              className="h-16 sm:h-20 md:h-24 w-auto drop-shadow-2xl"
+              className="h-64 sm:h-80 md:h-96 w-auto drop-shadow-2xl"
             />
             <p className="text-xs sm:text-sm text-white/70 dark:text-white/60 tracking-wide text-center max-w-md px-4 font-light">
-              Lorem ipsum dolor sit amet, consectetur adipiscing
+              Instituto Hondureño de Geología y Minas
             </p>
           </div>
-            <p className="text-xs sm:text-sm text-white/70 dark:text-white/60 tracking-wide text-center max-w-md px-4 font-light">
-              Lorem ipsum dolor sit amet, consectetur adipiscing
-            </p>
-          </div>
+      
 
           <div className="w-full max-w-4xl px-2 sm:px-0">
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 sm:gap-3">
