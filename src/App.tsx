@@ -1,7 +1,33 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Moon, Sun, Plus } from 'lucide-react';
 import { AppCard } from './components/AppCard';
 import { microApps } from './config/apps';
+
+function App() {
+  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  return (
+    <div className={isDarkMode ? 'dark' : ''}>
+      <div className="min-h-screen w-full relative flex flex-col">
+        <div
+          className="fixed inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: 'url(/SIGEM1.1/MapaRelieve.svg)',
+            transform: `translateY(${scrollY * 0.5}px)`,
+            willChange: 'transform',
+          }}
+        />
+        <div className="fixed inset-0 bg-slate-800/25 dark:bg-black/35 backdrop-blur-[1px]" />
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
