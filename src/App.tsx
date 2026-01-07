@@ -45,9 +45,6 @@ function App() {
                   }}
               />
             </div>
-            <p className="text-xs sm:text-sm text-white/70 dark:text-white/60 tracking-wide text-center max-w-md px-4 font-light">
-              Instituto Hondureño de Geología y Minas
-            </p>
           </div>
       
 
