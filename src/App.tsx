@@ -27,7 +27,7 @@ function App() {
             willChange: 'transform',
           }}
         />
-      
+        <div className="fixed inset-0 bg-slate-800/25 dark:bg-black/35 backdrop-blur-[1px]" />
 
         <button
           onClick={() => setIsDarkMode(!isDarkMode)}
