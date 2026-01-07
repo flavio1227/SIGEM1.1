@@ -35,11 +35,13 @@ function App() {
         </a>
         <div className="flex flex-col items-center justify-center flex-1 px-4 py-8 sm:px-8 sm:py-12 md:px-12 md:py-16 relative z-10">
            <div className="mb-8 sm:mb-12 md:mb-16 flex flex-col items-center gap-3 sm:gap-4 md:gap-6">
-            <img 
-              src="/SIGEM1.1/LOGOSIGEM.svg" 
-              alt="SIGEM" 
-              className="h-64 sm:h-80 md:h-96 w-auto drop-shadow-2xl"
-            />
+           <div className="h-32 sm:h-40 md:h-48 flex items-center justify-center">
+              <img 
+                src="/SIGEM1.1/LOGOSIGEM.svg" 
+                alt="SIGEM" 
+                className="h-full w-auto max-w-full object-contain drop-shadow-2xl"
+              />
+            </div>
             <p className="text-xs sm:text-sm text-white/70 dark:text-white/60 tracking-wide text-center max-w-md px-4 font-light">
               Instituto Hondureño de Geología y Minas
             </p>
