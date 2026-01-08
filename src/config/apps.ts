@@ -45,9 +45,16 @@ export const microApps: MicroApp[] = [
   },
   {
     id: 'app-7',
-    title: 'Reserved',
+    title: 'Sitios de Interés',
     description: 'Future integration',
     url: '#',
     icon: 'Square',
+  },
+  {
+    id: 'app-8',
+    title: 'Municipalidades Integradas',
+    description: 'Integrated municipalities',
+    url: 'https://flavio1227.github.io/Municipalidades/',
+    icon: 'MapPin',
   },
 ];
