@@ -22,8 +22,8 @@ function App() {
           <Plus className="w-3 h-3" strokeWidth={1.5} />
           <span className="hidden sm:inline">Request Integration</span>
         </a>
-        <div className="flex flex-col items-center justify-center flex-1 px-4 py-8 sm:px-8 sm:py-12 md:px-12 md:py-16 relative z-10">
-          <div className="mb-8 sm:mb-12 md:mb-16 flex flex-col items-center gap-3 sm:gap-4 md:gap-6">
+        <div className="flex flex-col items-center justify-center flex-1 px-4 py-6 sm:px-8 sm:py-8 md:px-12 md:py-10 relative z-10">
+        <div className="mb-6 sm:mb-8 md:mb-10 flex flex-col items-center gap-3 sm:gap-4 md:gap-6">
             <div className="h-32 sm:h-40 md:h-48 flex items-center justify-center">
               <img 
                 src="/SIGEM1.1/LOGOSIGEM.svg" 
@@ -35,6 +35,7 @@ function App() {
                 }}
               />
             </div>
+
           </div>
 
           <div className="w-full max-w-4xl px-2 sm:px-0">
