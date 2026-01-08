@@ -57,4 +57,12 @@ export const microApps: MicroApp[] = [
     url: 'https://flavio1227.github.io/Municipalidades/',
     icon: 'MapPin',
   },
+  {
+    id: 'app-9',
+    title: 'E-Learning',
+    description: 'Online learning platform',
+    url: 'https://flavio1227.github.io/Municipalidades/',
+    icon: 'GraduationCap',
+  },
+  
 ];
