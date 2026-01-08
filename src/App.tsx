@@ -1,48 +1,25 @@
-import { useState, useEffect } from 'react';
-import { Moon, Sun, Plus } from 'lucide-react';
+import { Plus } from 'lucide-react';
 import { AppCard } from './components/AppCard';
 import { microApps } from './config/apps';
 
 function App() {
-  const [isDarkMode, setIsDarkMode] = useState(false);
-  const [scrollY, setScrollY] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   return (
-    <div className={isDarkMode ? 'dark' : ''}>
+    <div>
       <div className="min-h-screen w-full relative flex flex-col">
         <div
           className="fixed inset-0 bg-cover bg-center bg-no-repeat"
           style={{
             backgroundImage: 'url(/SIGEM1.1/MapaRelieve.svg)',
-            transform: `translateY(${scrollY * 0.5}px)`,
-            willChange: 'transform',
           }}
         />
-        <div className="fixed inset-0 bg-slate-800/25 dark:bg-black/35 backdrop-blur-[1px]" />
-
-        <button
-          onClick={() => setIsDarkMode(!isDarkMode)}
-          className="fixed top-4 right-4 sm:top-6 sm:right-6 p-2 rounded-sm bg-white/95 dark:bg-neutral-800/95 backdrop-blur-sm border border-slate-300 dark:border-neutral-700 text-slate-600 dark:text-neutral-400 hover:text-slate-800 dark:hover:text-neutral-200 hover:border-slate-400 dark:hover:border-neutral-600 transition-colors z-20 shadow-lg"
-          aria-label="Toggle dark mode"
-        >
-          {isDarkMode ? <Sun className="w-5 h-5" strokeWidth={1.5} /> : <Moon className="w-5 h-5" strokeWidth={1.5} />}
-        </button>
+        <div className="fixed inset-0 bg-slate-800/25 backdrop-blur-[1px]" />
 
         <a
           href="https://example.com/request-integration"
-          className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 px-3 py-2 sm:px-4 sm:py-2 rounded-sm bg-white/95 dark:bg-neutral-800/95 backdrop-blur-sm border border-slate-300 dark:border-neutral-700 text-slate-600 dark:text-neutral-400 hover:text-slate-800 dark:hover:text-neutral-200 hover:border-slate-400 dark:hover:border-neutral-600 transition-colors z-20 flex items-center gap-2 text-xs sm:text-sm font-medium shadow-lg"
+          className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 px-2 py-1.5 sm:px-3 sm:py-2 rounded-sm bg-white/95 backdrop-blur-sm border border-slate-300 text-slate-600 hover:text-slate-800 hover:border-slate-400 transition-colors z-20 flex items-center gap-1.5 text-xs font-medium shadow-lg"
           aria-label="Request integration"
         >
-          <Plus className="w-4 h-4" strokeWidth={1.5} />
+          <Plus className="w-3 h-3" strokeWidth={1.5} />
           <span className="hidden sm:inline">Request Integration</span>
         </a>
         <div className="flex flex-col items-center justify-center flex-1 px-4 py-8 sm:px-8 sm:py-12 md:px-12 md:py-16 relative z-10">
@@ -58,7 +35,7 @@ function App() {
                 }}
               />
             </div>
-            <p className="text-xs sm:text-sm text-white/70 dark:text-white/60 tracking-wide text-center max-w-md px-4 font-light">
+            <p className="text-xs sm:text-sm text-white/70 tracking-wide text-center max-w-md px-4 font-light">
               Instituto Hondureño de Geología y Minas
             </p>
           </div>
