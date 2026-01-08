@@ -25,13 +25,18 @@ function App() {
           }}
         />
         {/* Logo en esquina superior derecha */}
-        <div className="fixed top-4 right-4 sm:top-6 sm:right-6 z-20">
+        <a 
+          href="https://www.inhgeomin.gob.hn/" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="fixed top-4 right-4 sm:top-6 sm:right-6 z-20"
+        >
           <img 
             src="/SIGEM1.1/LogoINHGEOMIN.svg" 
             alt="INHGEOMIN" 
-            className="h-8 w-auto sm:h-10 md:h-12"
+            className="h-8 w-auto sm:h-10 md:h-12 hover:opacity-80 transition-opacity"
           />
-        </div>
+        </a>
         <a
           href="https://example.com/request-integration"
           className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 px-2 py-1.5 sm:px-3 sm:py-2 rounded-sm bg-white/95 backdrop-blur-sm border border-slate-300 text-slate-600 hover:text-slate-800 hover:border-slate-400 transition-colors z-20 flex items-center gap-1.5 text-xs font-medium shadow-lg"

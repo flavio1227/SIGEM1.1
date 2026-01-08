@@ -19,7 +19,7 @@ export const microApps: MicroApp[] = [
     id: 'app-3',
     title: 'Mapas',
     description: 'Geographic mapping',
-    url: 'https://example.com/mapas',
+    url: 'https://flavio1227.github.io/Mapas/',
     icon: 'Map',
   },
   {
