@@ -26,7 +26,7 @@ export const microApps: MicroApp[] = [
     id: 'app-4',
     title: 'Calendarios',
     description: 'Calendar and scheduling',
-    url: 'https://example.com/calendarios',
+    url: 'https://flavio1227.github.io/Calendario/',
     icon: 'Calendar',
   },
   {
