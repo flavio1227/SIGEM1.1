@@ -12,8 +12,6 @@ function App() {
             backgroundImage: 'url(/SIGEM1.1/MapaRelieve.svg)',
           }}
         />
-        <div className="fixed inset-0 bg-slate-800/25 backdrop-blur-[1px]" />
-
         <a
           href="https://example.com/request-integration"
           className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 px-2 py-1.5 sm:px-3 sm:py-2 rounded-sm bg-white/95 backdrop-blur-sm border border-slate-300 text-slate-600 hover:text-slate-800 hover:border-slate-400 transition-colors z-20 flex items-center gap-1.5 text-xs font-medium shadow-lg"
