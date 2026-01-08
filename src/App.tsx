@@ -45,7 +45,7 @@ function App() {
           </div>
 
           <div className="w-full max-w-4xl px-2 sm:px-0">
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-2 sm:gap-3">
+          <div className="grid grid-cols-2 md:grid-cols-7 gap-2 sm:gap-3">
               {microApps.map((app) => (
                 <AppCard key={app.id} app={app} />
               ))}
