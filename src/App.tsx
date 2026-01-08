@@ -17,7 +17,7 @@ function App() {
           <img 
             src="/SIGEM1.1/LogoINHGEOMIN.svg" 
             alt="INHGEOMIN" 
-            className="h-12 w-auto sm:h-16 md:h-20"
+            className="h-8 w-auto sm:h-10 md:h-12"
           />
         </div>
         <a
