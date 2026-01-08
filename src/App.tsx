@@ -3,6 +3,18 @@ import { AppCard } from './components/AppCard';
 import { microApps } from './config/apps';
 
 function App() {
+  // Función para verificar si estamos en las fechas importantes
+  const isImportantDate = () => {
+    const now = new Date();
+    const month = now.getMonth(); // 0 = enero, 1 = febrero, etc.
+    const day = now.getDate();
+    
+    // Todo enero (month === 0) o 27 de febrero (month === 1 && day === 27)
+    return month === 0 || (month === 1 && day === 27);
+  };
+
+  const shouldBlinkCalendarios = isImportantDate();
+
   return (
     <div>
       <div className="min-h-screen w-full relative flex flex-col">
@@ -47,7 +59,11 @@ function App() {
           <div className="w-full max-w-4xl px-2 sm:px-0">
           <div className="grid grid-cols-2 md:grid-cols-7 gap-2 sm:gap-3">
               {microApps.map((app) => (
-                <AppCard key={app.id} app={app} />
+                <AppCard 
+                  key={app.id} 
+                  app={app} 
+                  shouldBlink={app.id === 'app-4' && shouldBlinkCalendarios}
+                />
               ))}
             </div>
           </div>
