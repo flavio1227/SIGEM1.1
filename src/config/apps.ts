@@ -33,7 +33,7 @@ export const microApps: MicroApp[] = [
     id: 'app-5',
     title: 'Biblioteca',
     description: 'Digital library',
-    url: 'https://example.com/biblioteca',
+    url: 'https://flavio1227.github.io/Biblioteca/',
     icon: 'Library',
   },
   {
