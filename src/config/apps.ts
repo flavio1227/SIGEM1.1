@@ -54,7 +54,7 @@ export const microApps: MicroApp[] = [
     id: 'app-8',
     title: 'Municipalidades Integradas',
     description: 'Integrated municipalities',
-    url: 'https://flavio1227.github.io/Municipalidades/',
+    url: 'https://flavio1227.github.io/MunicipalidadesIntegradas/',
     icon: 'MapPin',
   },
   {
