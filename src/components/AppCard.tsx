@@ -12,8 +12,6 @@ export function AppCard({ app, shouldBlink = false }: AppCardProps) {
   return (
     <a
       href={app.url}
-      target={app.url !== '#' ? '_blank' : undefined}
-      rel={app.url !== '#' ? 'noopener noreferrer' : undefined}
       className={`group relative aspect-square bg-white/95 backdrop-blur-sm rounded p-3 sm:p-4 border border-slate-300 hover:bg-white hover:border-slate-400 flex flex-col items-center justify-center gap-1.5 sm:gap-2 transition-all active:scale-95 shadow-lg hover:shadow-xl ${shouldBlink ? 'animate-subtle-blink' : ''}`}
       aria-label={`Launch ${app.title}`}
     >
