@@ -44,17 +44,24 @@ export function AuthGuard({ children }: AuthGuardProps) {
   }, [user, loading]);
 
   /**
-   * Show nothing while checking authentication status
+   * Show loading indicator while checking authentication status
    * This prevents the shell UI from flashing before redirect
    */
   if (loading) {
-    return null;
+    return (
+      <div className="min-h-screen w-full flex items-center justify-center bg-slate-50">
+        <div className="text-center">
+          <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-slate-600 mb-4"></div>
+          <p className="text-slate-600 text-sm">Verificando autenticación...</p>
+        </div>
+      </div>
+    );
   }
 
   /**
    * If no user after loading, check if we're in development mode
    * In development, allow rendering without auth for testing
-   * In production, return null (redirect will happen via useEffect)
+   * In production, show loading while redirecting
    */
   if (!user) {
     const isDevelopment = window.location.hostname === 'localhost' || 
@@ -67,9 +74,16 @@ export function AuthGuard({ children }: AuthGuardProps) {
       return <>{children}</>;
     }
     
-    // In production, prevent rendering before redirect completes
+    // In production, show loading message while redirecting
     console.log('AuthGuard: No user authenticated, redirecting to login...');
-    return null;
+    return (
+      <div className="min-h-screen w-full flex items-center justify-center bg-slate-50">
+        <div className="text-center">
+          <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-slate-600 mb-4"></div>
+          <p className="text-slate-600 text-sm">Redirigiendo al login...</p>
+        </div>
+      </div>
+    );
   }
 
   /**

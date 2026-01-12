@@ -15,6 +15,20 @@ export function useAuth() {
   const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
+    let timeoutId: NodeJS.Timeout;
+    let isMounted = true;
+
+    /**
+     * Timeout to prevent infinite loading state
+     * If Firebase doesn't respond within 5 seconds, assume no user
+     */
+    timeoutId = setTimeout(() => {
+      if (isMounted) {
+        console.warn('Firebase Auth timeout - assuming no user');
+        setLoading(false);
+      }
+    }, 5000);
+
     /**
      * Subscribe to authentication state changes
      * This listener will fire:
@@ -25,26 +39,39 @@ export function useAuth() {
       const unsubscribe = onAuthStateChanged(
         auth,
         (currentUser) => {
-          setUser(currentUser);
-          setLoading(false);
+          if (isMounted) {
+            clearTimeout(timeoutId);
+            setUser(currentUser);
+            setLoading(false);
+          }
         },
         (error) => {
           // Handle authentication errors gracefully
-          console.error('Firebase Auth Error:', error);
-          setUser(null);
-          setLoading(false);
+          if (isMounted) {
+            clearTimeout(timeoutId);
+            console.error('Firebase Auth Error:', error);
+            setUser(null);
+            setLoading(false);
+          }
         }
       );
 
       /**
        * Cleanup: Unsubscribe from auth state changes when component unmounts
        */
-      return () => unsubscribe();
+      return () => {
+        isMounted = false;
+        clearTimeout(timeoutId);
+        unsubscribe();
+      };
     } catch (error) {
       // If Firebase initialization fails, allow app to continue
-      console.error('Error initializing Firebase Auth:', error);
-      setUser(null);
-      setLoading(false);
+      if (isMounted) {
+        clearTimeout(timeoutId);
+        console.error('Error initializing Firebase Auth:', error);
+        setUser(null);
+        setLoading(false);
+      }
     }
   }, []);
 
