@@ -9,9 +9,13 @@ interface AppCardProps {
 export function AppCard({ app, shouldBlink = false }: AppCardProps) {
   const IconComponent = Icons[app.icon as keyof typeof Icons] as React.ComponentType<{ className?: string; strokeWidth?: number }>;
 
+  const handleClick = () => {
+    window.location.href = app.url;
+  };
+
   return (
-    <a
-      href={app.url}
+    <button
+      onClick={handleClick}
       className={`group relative aspect-square bg-white/95 backdrop-blur-sm rounded p-3 sm:p-4 border border-slate-300 hover:bg-white hover:border-slate-400 flex flex-col items-center justify-center gap-1.5 sm:gap-2 transition-all active:scale-95 shadow-lg hover:shadow-xl ${shouldBlink ? 'animate-subtle-blink' : ''}`}
       aria-label={`Launch ${app.title}`}
     >
@@ -23,6 +27,6 @@ export function AppCard({ app, shouldBlink = false }: AppCardProps) {
           {app.title}
         </h3>
       </div>
-    </a>
+    </button>
   );
 }
