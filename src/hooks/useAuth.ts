@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { User, onAuthStateChanged } from 'firebase/auth';
+import { User, onAuthStateChanged, signOut } from 'firebase/auth';
 import { auth } from '../config/firebase';
 
 /**
@@ -75,5 +75,19 @@ export function useAuth() {
     }
   }, []);
 
-  return { user, loading };
+  /**
+   * Function to sign out the current user
+   * After signing out, the AuthGuard will redirect to login
+   */
+  const logout = async () => {
+    try {
+      await signOut(auth);
+      console.log('User signed out successfully');
+    } catch (error) {
+      console.error('Error signing out:', error);
+      throw error;
+    }
+  };
+
+  return { user, loading, logout };
 }

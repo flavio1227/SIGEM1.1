@@ -1,6 +1,7 @@
 import { Plus } from 'lucide-react';
 import { AppCard } from './components/AppCard';
 import { AuthGuard } from './components/AuthGuard';
+import { LogoutButton } from './components/LogoutButton';
 import { microApps } from './config/apps';
 
 function App() {
@@ -26,6 +27,9 @@ function App() {
             backgroundImage: 'url(/SIGEM1.1/MapaRelieve.svg)',
           }}
         />
+        {/* Botón de cerrar sesión en esquina superior izquierda */}
+        <LogoutButton />
+        
         {/* Logo en esquina superior derecha */}
         <a 
           href="https://www.inhgeomin.gob.hn/" 
