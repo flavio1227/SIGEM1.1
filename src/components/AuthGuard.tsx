@@ -25,9 +25,21 @@ export function AuthGuard({ children }: AuthGuardProps) {
     /**
      * Redirect to login if user is not authenticated
      * Only redirect after loading is complete to avoid flashing content
+     * Skip redirect in development mode (localhost) to allow testing
      */
     if (!loading && !user) {
-      window.location.href = LOGIN_URL;
+      const isDevelopment = window.location.hostname === 'localhost' || 
+                            window.location.hostname === '127.0.0.1' ||
+                            window.location.hostname.includes('localhost');
+      
+      // Only redirect in production, allow development without auth
+      if (!isDevelopment) {
+        // Prevent redirect loops by checking if we're already being redirected
+        const currentUrl = window.location.href;
+        if (!currentUrl.includes(LOGIN_URL)) {
+          window.location.href = LOGIN_URL;
+        }
+      }
     }
   }, [user, loading]);
 
@@ -40,10 +52,23 @@ export function AuthGuard({ children }: AuthGuardProps) {
   }
 
   /**
-   * If no user after loading, return null (redirect will happen via useEffect)
-   * This prevents rendering the shell before redirect completes
+   * If no user after loading, check if we're in development mode
+   * In development, allow rendering without auth for testing
+   * In production, return null (redirect will happen via useEffect)
    */
   if (!user) {
+    const isDevelopment = window.location.hostname === 'localhost' || 
+                          window.location.hostname === '127.0.0.1' ||
+                          window.location.hostname.includes('localhost');
+    
+    // Allow rendering in development mode without auth
+    if (isDevelopment) {
+      console.log('AuthGuard: Development mode - allowing access without authentication');
+      return <>{children}</>;
+    }
+    
+    // In production, prevent rendering before redirect completes
+    console.log('AuthGuard: No user authenticated, redirecting to login...');
     return null;
   }
 
