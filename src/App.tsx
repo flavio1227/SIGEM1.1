@@ -1,5 +1,6 @@
 import { Plus } from 'lucide-react';
 import { AppCard } from './components/AppCard';
+import { AuthGuard } from './components/AuthGuard';
 import { microApps } from './config/apps';
 
 function App() {
@@ -16,8 +17,9 @@ function App() {
   const shouldBlinkCalendarios = isImportantDate();
 
   return (
-    <div>
-      <div className="min-h-screen w-full relative flex flex-col">
+    <AuthGuard>
+      <div>
+        <div className="min-h-screen w-full relative flex flex-col">
         <div
           className="fixed inset-0 bg-cover bg-center bg-no-repeat"
           style={{
@@ -75,6 +77,7 @@ function App() {
         </div>
       </div>
     </div>
+    </AuthGuard>
   );
 }
 
