@@ -12,7 +12,7 @@ export const microApps: MicroApp[] = [
     id: 'app-2',
     title: 'Museo Virtual',
     description: 'Virtual museum platform',
-    url: 'https://flavio1227.github.io/Museo-Virtual/',
+    url: 'https://flavio1227.github.io/PaginaDeCarga/',
     icon: 'Building2',
   },
   {
@@ -61,7 +61,7 @@ export const microApps: MicroApp[] = [
     id: 'app-9',
     title: 'E-Learning',
     description: 'Online learning platform',
-    url: 'https://flavio1227.github.io/Municipalidades/',
+    url: 'https://flavio1227.github.io/PaginaDeCarga/',
     icon: 'GraduationCap',
   },
   
