@@ -47,7 +47,7 @@ export const microApps: MicroApp[] = [
     id: 'app-7',
     title: 'Sitios de Interés',
     description: 'Future integration',
-    url: '#',
+    url: 'https://flavio1227.github.io/Sitios-Interes/',
     icon: 'Square',
   },
   {
