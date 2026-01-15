@@ -40,7 +40,7 @@ export const microApps: MicroApp[] = [
     id: 'app-6',
     title: 'Cargar Informes',
     description: 'Report upload system',
-    url: 'https://example.com/informes',
+    url: 'https://flavio1227.github.io/InformeAnualMunicipal/',
     icon: 'FileUp',
   },
   {
